@@ -1,0 +1,23 @@
+- name: Installing deb build tools
+  package:
+    name:
+      - moreutils
+      - build-essential
+      - fakeroot
+      - devscripts
+      - dpkg-dev
+      - equivs
+      - git
+      - git-buildpackage
+    state: present
+
+
+- name: 'Installing git_changelog.sh'
+  copy:
+    src: 'files/git_changelog.sh'
+    dest: '/usr/local/bin/git_changelog.sh'
+    owner: root
+    group: root
+    mode: u=rwx,g=rx,o=rx
+
+
